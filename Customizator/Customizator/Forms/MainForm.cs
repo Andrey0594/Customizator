@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Customizator.Classes.Settings;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +17,10 @@ namespace Customizator.Forms
 {
     public partial class MainForm : Form
     {
+       
+
+
+        private AppSettings appSettings;
         private ConnectionSettingsForm connectionSettingsForm= new ConnectionSettingsForm();
 
         public MainForm()
@@ -24,6 +30,11 @@ namespace Customizator.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            appSettings = OptionsLoader<AppSettings>.LoadOptionsFromXml();
+            if (appSettings==null)
+                appSettings=AppSettings.LoadDefaultOptions();
+
+
 
             AddFormOnPanel(connectionSettingsForm, ConnectionSettingsPage);
             

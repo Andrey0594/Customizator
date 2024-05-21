@@ -50,6 +50,7 @@ namespace Customizator.Forms
             this.MainPageView.Location = new System.Drawing.Point(0, 0);
             this.MainPageView.Name = "MainPageView";
             this.MainPageView.SelectedPage = this.ConnectionSettingsPage;
+            this.MainPageView.ShowItemToolTips = false;
             this.MainPageView.Size = new System.Drawing.Size(1649, 1061);
             this.MainPageView.TabIndex = 0;
             this.MainPageView.ViewMode = Telerik.WinControls.UI.PageViewMode.NavigationView;
@@ -59,16 +60,16 @@ namespace Customizator.Forms
             this.ConnectionSettingsPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ConnectionSettingsPage.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.ConnectionSettingsPage.Image = global::Customizator.Properties.Resources.DBSettings;
-            this.ConnectionSettingsPage.ItemSize = new System.Drawing.SizeF(216F, 28F);
-            this.ConnectionSettingsPage.Location = new System.Drawing.Point(281, 30);
+            this.ConnectionSettingsPage.ItemSize = new System.Drawing.SizeF(224F, 36F);
+            this.ConnectionSettingsPage.Location = new System.Drawing.Point(281, 37);
             this.ConnectionSettingsPage.Name = "ConnectionSettingsPage";
-            this.ConnectionSettingsPage.Size = new System.Drawing.Size(1367, 1030);
+            this.ConnectionSettingsPage.Size = new System.Drawing.Size(1367, 1023);
             this.ConnectionSettingsPage.Text = "Настройки соединения";
             // 
             // FunctionsPage
             // 
             this.FunctionsPage.Image = ((System.Drawing.Image)(resources.GetObject("FunctionsPage.Image")));
-            this.FunctionsPage.ItemSize = new System.Drawing.SizeF(216F, 28F);
+            this.FunctionsPage.ItemSize = new System.Drawing.SizeF(224F, 36F);
             this.FunctionsPage.Location = new System.Drawing.Point(281, 30);
             this.FunctionsPage.Name = "FunctionsPage";
             this.FunctionsPage.Size = new System.Drawing.Size(1367, 1030);
@@ -77,7 +78,7 @@ namespace Customizator.Forms
             // ExecSctriptsPage
             // 
             this.ExecSctriptsPage.Image = ((System.Drawing.Image)(resources.GetObject("ExecSctriptsPage.Image")));
-            this.ExecSctriptsPage.ItemSize = new System.Drawing.SizeF(216F, 28F);
+            this.ExecSctriptsPage.ItemSize = new System.Drawing.SizeF(224F, 36F);
             this.ExecSctriptsPage.Location = new System.Drawing.Point(281, 32);
             this.ExecSctriptsPage.Name = "ExecSctriptsPage";
             this.ExecSctriptsPage.Size = new System.Drawing.Size(1642, 1109);
@@ -87,7 +88,7 @@ namespace Customizator.Forms
             // 
             this.PluginsPage.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.PluginsPage.Image = ((System.Drawing.Image)(resources.GetObject("PluginsPage.Image")));
-            this.PluginsPage.ItemSize = new System.Drawing.SizeF(216F, 28F);
+            this.PluginsPage.ItemSize = new System.Drawing.SizeF(224F, 36F);
             this.PluginsPage.Location = new System.Drawing.Point(281, 30);
             this.PluginsPage.Name = "PluginsPage";
             this.PluginsPage.Size = new System.Drawing.Size(1367, 1030);
@@ -104,7 +105,7 @@ namespace Customizator.Forms
             this.Name = "MainForm";
             this.Text = "Кастомизатор";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MainPageView)).EndInit();
             this.MainPageView.ResumeLayout(false);
             this.ResumeLayout(false);

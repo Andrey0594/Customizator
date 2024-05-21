@@ -53,6 +53,8 @@
     <Reference Include="TelerikCommon, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Settings\AppSettings.cs" />
+    <Compile Include="Classes\Settings\OptionsLoader.cs" />
     <Compile Include="Forms\ConnectionSettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,9 +99,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Customizator.ico" />
     <None Include="Resources\DBSettings.png" />

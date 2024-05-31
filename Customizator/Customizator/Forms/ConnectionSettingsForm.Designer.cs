@@ -41,7 +41,6 @@
             this.UserTBox = new System.Windows.Forms.TextBox();
             this.PasswordTBox = new System.Windows.Forms.TextBox();
             this.SaveBtn = new System.Windows.Forms.Button();
-            this.CheckConnectionBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PortTBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,22 +153,11 @@
             this.SaveBtn.Text = "Сохранить";
             this.SaveBtn.UseVisualStyleBackColor = true;
             // 
-            // CheckConnectionBtn
-            // 
-            this.CheckConnectionBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CheckConnectionBtn.Location = new System.Drawing.Point(255, 204);
-            this.CheckConnectionBtn.Name = "CheckConnectionBtn";
-            this.CheckConnectionBtn.Size = new System.Drawing.Size(304, 31);
-            this.CheckConnectionBtn.TabIndex = 4;
-            this.CheckConnectionBtn.Text = "Проверить соединение";
-            this.CheckConnectionBtn.UseVisualStyleBackColor = true;
-            // 
             // ConnectionSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 681);
-            this.Controls.Add(this.CheckConnectionBtn);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.PasswordTBox);
             this.Controls.Add(this.UserTBox);
@@ -183,7 +171,7 @@
             this.Controls.Add(this.ServerLbl);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ConnectionSettingsForm";
             this.Text = "Настройки соединения";
             ((System.ComponentModel.ISupportInitialize)(this.PortTBox)).EndInit();
@@ -206,6 +194,5 @@
         protected internal System.Windows.Forms.TextBox UserTBox;
         protected internal System.Windows.Forms.TextBox PasswordTBox;
         protected internal System.Windows.Forms.Button SaveBtn;
-        protected internal System.Windows.Forms.Button CheckConnectionBtn;
     }
 }

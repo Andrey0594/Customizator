@@ -14,12 +14,14 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using Telerik.WinControls.UI.Docking;
+using NLog;
 
 namespace Customizator.Forms
 {
     public partial class MainForm : Form
     {
       
+        ILogger _logger= LogManager.GetCurrentClassLogger();
 
 
         
@@ -31,13 +33,9 @@ namespace Customizator.Forms
         }
 
         private void MainForm_Load(object sender, EventArgs e)
-        {
+        {           
             AddFormOnPanel(connectionSettingsForm, ConnectionSettingsPage);
             connectionSettingsForm.SaveBtn.Click+= SaveBtn_Click;
-            
-
-
-
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)

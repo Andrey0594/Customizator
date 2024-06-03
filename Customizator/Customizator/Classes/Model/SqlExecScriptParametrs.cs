@@ -8,9 +8,9 @@ namespace Customizator.Classes.Model
     [Table("SqlExecScriptParametrs")]
     public class SqlExecScriptParametrs
     {
-        [Key]
+        [Key, Column(Order = 0)]
         public int SqlExecScriptID { get; set; }
-        [Key]
+        [Key, Column(Order = 1)]
         public int ParametrID { get; set; }
 
         [ForeignKey(nameof(ParametrID))]

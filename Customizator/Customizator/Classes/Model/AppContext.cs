@@ -1,12 +1,15 @@
-﻿using System;
+﻿using Customizator.Classes.DbClasses;
+using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.SQLite;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Customizator.Classes.Model
 {
@@ -24,6 +27,7 @@ namespace Customizator.Classes.Model
         }
 
        
+
         public DbSet<DbTypes> DbTypes { get; set; }
         public DbSet<ExecScripts> ExecScripts { get; set; }
         public DbSet<ExecScriptTypes> ExecScriptTypes { get; set; }
@@ -34,6 +38,13 @@ namespace Customizator.Classes.Model
         public DbSet<SqlExecScriptFunctions> SqlExecScriptFunctions { get; set; }
         public DbSet<SqlExecScriptParametrs> SqlExecScriptParametrs { get; set; }
         public DbSet<SqlExecScripts> SqlExecScripts { get; set; }
+
+        
+
+
+
+
+       
 
     }
 }

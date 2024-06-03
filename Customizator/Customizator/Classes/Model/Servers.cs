@@ -8,21 +8,52 @@ using System.Threading.Tasks;
 
 namespace Customizator.Classes.Model
 {
+    /// <summary>
+    /// Класс Сервер. Таблица в БД-Servers
+    /// </summary>
     [Table("Servers")]
     public class Servers
     {
+        /// <summary>
+        /// ID сервера БД
+        /// </summary>
         [Key]
         public int ID { get; set; }
+        /// <summary>
+        /// Адрес сервера БД
+        /// </summary>
         public string ServerName { get; set; }
-        public int DbTypeID { get; set; }            
-        
-        public int Port { get; set; }
+        /// <summary>
+        /// ID типа БД
+        /// </summary>
+
+        public int? DbTypeID { get; set; }       
+        /// <summary>
+        /// Порт для подключения к БД
+        /// </summary>
+        public string Port { get; set; }
+        /// <summary>
+        /// Имя пользователя для подключения к БД
+        /// </summary>
+        public string User { get; set; }
+        /// <summary>
+        /// Пароль для подключения к БД
+        /// </summary>
         public string Password { get; set; }
+        /// <summary>
+        /// Название БД
+        /// </summary>
         public string DbName { get; set; }
-        public char IsCurrent { get; set; }
+        /// <summary>
+        /// Является ли сервер текущим
+        /// </summary>
+        [Column("IsCurrent")]
+        public string IsCurrent { get; set; }
 
-
-        [ForeignKey(nameof(DbTypeID))]
+        /// <summary>
+        /// Тип базы данных
+        /// </summary>
+        [ForeignKey("DbTypeID")]
         public DbTypes DbType { get; set; }
     }
 }

@@ -49,7 +49,7 @@ namespace Customizator.Forms
             this.MainPageView.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MainPageView.Location = new System.Drawing.Point(0, 0);
             this.MainPageView.Name = "MainPageView";
-            this.MainPageView.SelectedPage = this.ConnectionSettingsPage;
+            this.MainPageView.SelectedPage = this.FunctionsPage;
             this.MainPageView.ShowItemToolTips = false;
             this.MainPageView.Size = new System.Drawing.Size(1649, 1061);
             this.MainPageView.TabIndex = 0;
@@ -70,9 +70,9 @@ namespace Customizator.Forms
             // 
             this.FunctionsPage.Image = ((System.Drawing.Image)(resources.GetObject("FunctionsPage.Image")));
             this.FunctionsPage.ItemSize = new System.Drawing.SizeF(224F, 36F);
-            this.FunctionsPage.Location = new System.Drawing.Point(281, 30);
+            this.FunctionsPage.Location = new System.Drawing.Point(281, 37);
             this.FunctionsPage.Name = "FunctionsPage";
-            this.FunctionsPage.Size = new System.Drawing.Size(1367, 1030);
+            this.FunctionsPage.Size = new System.Drawing.Size(1367, 1023);
             this.FunctionsPage.Text = "Функции";
             // 
             // ExecSctriptsPage

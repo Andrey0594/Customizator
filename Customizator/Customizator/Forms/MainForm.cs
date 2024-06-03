@@ -15,17 +15,20 @@ using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using Telerik.WinControls.UI.Docking;
 using NLog;
+using AppContext =Customizator.Classes.Model.AppContext;
+using Customizator.Classes;
+using Customizator.Classes.Settings;
 
 namespace Customizator.Forms
 {
     public partial class MainForm : Form
     {
       
-        ILogger _logger= LogManager.GetCurrentClassLogger();
-
+        private ILogger _logger= LogManager.GetCurrentClassLogger();
+        private MainSettings _settings = new MainSettings($"{Application.StartupPath}//Settings.db");
 
         
-        private ConnectionSettingsForm connectionSettingsForm= new ConnectionSettingsForm();
+        private ConnectionSettingsForm connectionSettingsForm;
 
         public MainForm()
         {
@@ -33,7 +36,13 @@ namespace Customizator.Forms
         }
 
         private void MainForm_Load(object sender, EventArgs e)
-        {           
+        {
+            
+
+
+            connectionSettingsForm = new ConnectionSettingsForm(_settings, _logger);
+
+
             AddFormOnPanel(connectionSettingsForm, ConnectionSettingsPage);
             connectionSettingsForm.SaveBtn.Click+= SaveBtn_Click;
         }
@@ -56,5 +65,7 @@ namespace Customizator.Forms
             
             
         }
+
+       
     }
 }

@@ -11,9 +11,9 @@ namespace Customizator.Classes.Model
     [Table("SqlExecScriptFunctions")]
     public class SqlExecScriptFunctions
     {
-        [Key]
+        [Key, Column(Order = 0)]
         public int SqlExecScriptID { get; set; }
-        [Key]
+        [Key, Column(Order = 1)]
         public int FunctionID { get; set; }
 
         [ForeignKey(nameof(SqlExecScriptID))]

@@ -223,6 +223,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.WinControls, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="Telerik.WinControls.RadDock, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.SyntaxEditor, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.UI, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="TelerikCommon, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="WindowsBase" />
@@ -232,6 +233,7 @@
     <Compile Include="Classes\DbClasses\DataBaseProviderFactory.cs" />
     <Compile Include="Classes\DbClasses\MicrosoftSQLProvider.cs" />
     <Compile Include="Classes\DbClasses\PostgreSQLProvider.cs" />
+    <Compile Include="Classes\DbClasses\SqliteProvider.cs" />
     <Compile Include="Classes\Model\AppContext.cs" />
     <Compile Include="Classes\Model\DbTypes.cs" />
     <Compile Include="Classes\Model\ExecScripts.cs" />
@@ -243,12 +245,19 @@
     <Compile Include="Classes\Model\SqlExecScriptFunctions.cs" />
     <Compile Include="Classes\Model\SqlExecScriptParametrs.cs" />
     <Compile Include="Classes\Model\SqlExecScripts.cs" />
+    <Compile Include="Classes\Settings\InterfaceMethods.cs" />
     <Compile Include="Classes\Settings\MainSettings.cs" />
     <Compile Include="Forms\ConnectionSettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ConnectionSettingsForm.Designer.cs">
       <DependentUpon>ConnectionSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FunctionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FunctionsForm.Designer.cs">
+      <DependentUpon>FunctionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -258,8 +267,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\CreateDB.sql" />
     <EmbeddedResource Include="Forms\ConnectionSettingsForm.resx">
       <DependentUpon>ConnectionSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FunctionsForm.resx">
+      <DependentUpon>FunctionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

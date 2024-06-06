@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConnectionSettingsForm));
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.ServerLbl = new System.Windows.Forms.Label();
             this.DBTypeLbl = new System.Windows.Forms.Label();
             this.PortLbl = new System.Windows.Forms.Label();
@@ -213,8 +212,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ColorDialog colorDialog1;
         protected internal System.Windows.Forms.Label ServerLbl;
         protected internal System.Windows.Forms.Label DBTypeLbl;
         protected internal System.Windows.Forms.Label PortLbl;

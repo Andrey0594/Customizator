@@ -1,6 +1,9 @@
 ﻿using Customizator.Classes.DbClasses;
 using Customizator.Classes.Model;
-using System;
+using Customizator.Properties;
+using System.Data.Entity;
+using System.IO;
+using System.Linq;
 using AppContext = Customizator.Classes.Model.AppContext;
 
 
@@ -14,7 +17,17 @@ namespace Customizator.Classes.Settings
 
         public MainSettings(string connectionPath)
         {
-            Context = new AppContext($"Data Source={connectionPath}");
+            if(File.Exists(connectionPath))
+                Context = new AppContext($"Data Source={connectionPath}");
+            else
+            {
+                SqliteProvider sqlite = new SqliteProvider(connectionPath, Resources.CreateDB);
+                sqlite.CreateSettingsDataBase();
+
+            }
+            Context.DbTypes.Load();
+            CurrentServer = Context.Servers.FirstOrDefault(t => t.IsCurrent == "+");
+            Connection = DataBaseProviderFactory.CreateLanDocsProvider(CurrentServer); 
         }
     }
 }

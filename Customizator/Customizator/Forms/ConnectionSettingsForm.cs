@@ -40,8 +40,9 @@ namespace Customizator.Forms
 
         private void ConnectionSettingsForm_Load(object sender, System.EventArgs e)
         {
-            BindDataWithControl(DbTypeCBox, _mainSettings.Context.DbTypes.ToList(), "ID", "Name");
-            BindDataWithControl(ServerCBox, _mainSettings.Context.Servers.ToList(), "ID", "ServerName");
+            InterfaceMethods.BindDataWithControl(DbTypeCBox, _mainSettings.Context.DbTypes.ToList(), "ID", "Name");
+            InterfaceMethods.BindDataWithControl(ServerCBox, _mainSettings.Context.Servers.ToList(), "ID", "ServerName");
+            ServerCBox.SelectedItem = _mainSettings.CurrentServer;
         }
 
 
@@ -56,17 +57,10 @@ namespace Customizator.Forms
             
 
         }
-        private void BindDataWithControl<T>(ListControl control, List<T> values, string valueMember, string displayMember )
-        {
-            
-            control.DataSource = values;
-            control.ValueMember = valueMember;
-            control.DisplayMember = displayMember;
-        }
+        
 
         private void ServerCBox_SelectedValueChanged(object sender, System.EventArgs e)
-        {
-            _mainSettings.CurrentServer = ServerCBox.SelectedItem as Servers;
+        {            
             UpdateControls(_mainSettings.CurrentServer);
         }
 
@@ -114,6 +108,7 @@ namespace Customizator.Forms
                 _mainSettings.Context.SaveChanges();
             }
             _mainSettings.CurrentServer = server;
+            _mainSettings.Connection = DataBaseProviderFactory.CreateLanDocsProvider(_mainSettings.CurrentServer);
 
 
         }

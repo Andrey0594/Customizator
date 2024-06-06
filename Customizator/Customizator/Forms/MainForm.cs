@@ -1,26 +1,16 @@
-﻿
-using Customizator.Classes.Model;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
-using Telerik.WinControls;
 using Telerik.WinControls.UI;
-using Telerik.WinControls.UI.Docking;
 using NLog;
-using AppContext =Customizator.Classes.Model.AppContext;
-using Customizator.Classes;
 using Customizator.Classes.Settings;
+using System.Linq;
 
 namespace Customizator.Forms
 {
+    /// <summary>
+    /// Класс базовой формы приложения
+    /// </summary>
+
     public partial class MainForm : Form
     {
       
@@ -29,7 +19,12 @@ namespace Customizator.Forms
 
         
         private ConnectionSettingsForm connectionSettingsForm;
+        private FunctionsForm functionsForm;
 
+
+        /// <summary>
+        /// Конструктор базовой формы приложения
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
@@ -37,34 +32,17 @@ namespace Customizator.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
-
-
             connectionSettingsForm = new ConnectionSettingsForm(_settings, _logger);
-
-
-            AddFormOnPanel(connectionSettingsForm, ConnectionSettingsPage);
-            connectionSettingsForm.SaveBtn.Click+= SaveBtn_Click;
-        }
-
-        private void SaveBtn_Click(object sender, EventArgs e)
-        {
-            
+            InterfaceMethods.AddFormOnPanel(connectionSettingsForm, ConnectionSettingsPage);
+            functionsForm = new FunctionsForm(_settings, _logger);
+            InterfaceMethods.AddFormOnPanel(functionsForm, FunctionsPage);
 
         }
 
-        private void AddFormOnPanel(Form frm, RadPageViewPage page)
-        {
-            
-            frm.TopLevel = false;
-            page.Controls.Add(frm);
-            frm.Dock= DockStyle.Fill;
-            frm.Parent = page;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Show();
-            
-            
-        }
+
+
+
+        
 
        
     }

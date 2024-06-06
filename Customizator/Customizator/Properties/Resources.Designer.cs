@@ -61,6 +61,29 @@ namespace Customizator.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на CREATE TABLE &quot;DbTypes&quot;(
+        ///  [ID] INTEGER PRIMARY KEY ASC AUTOINCREMENT NOT NULL, 
+        ///  [Name] VARCHAR NOT NULL);
+        ///
+        ///CREATE TABLE &quot;ExecScriptTypes&quot;(
+        ///  [ID] INTEGER PRIMARY KEY AUTOINCREMENT, 
+        ///  [Name] VARCHAR);
+        ///
+        ///CREATE TABLE [ExecScripts](
+        ///  [ID] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
+        ///  [Name] VARCHAR, 
+        ///  [ExecScriptTypeID] INTEGER REFERENCES &quot;ExecScriptTypes&quot;([ID]) ON DELETE CASCADE ON UPDATE CASCADE, 
+        ///  [DbTypeID] INTEGER REFERENCES [DbTypes]([ID]) ON DELETE CASCADE ON UPDATE CASCADE);
+        ///
+        ///CREATE [остаток строки не уместился]&quot;;.
+        /// </summary>
+        internal static string CreateDB {
+            get {
+                return ResourceManager.GetString("CreateDB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap DBSettings {

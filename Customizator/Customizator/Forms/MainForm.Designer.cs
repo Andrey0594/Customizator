@@ -49,7 +49,7 @@ namespace Customizator.Forms
             this.MainPageView.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MainPageView.Location = new System.Drawing.Point(0, 0);
             this.MainPageView.Name = "MainPageView";
-            this.MainPageView.SelectedPage = this.FunctionsPage;
+            this.MainPageView.SelectedPage = this.ConnectionSettingsPage;
             this.MainPageView.ShowItemToolTips = false;
             this.MainPageView.Size = new System.Drawing.Size(1649, 1061);
             this.MainPageView.TabIndex = 0;
